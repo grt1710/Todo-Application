@@ -6,12 +6,18 @@ import * as actions from 'actions';
 export class Login extends React.Component {
   constructor (props) {
     super(props);
-    this.onLogin = this.onLogin.bind(this);
+    this.onGithubLogin = this.onGithubLogin.bind(this);
+    this.onGoogleLogin = this.onGoogleLogin.bind(this);
   }
-  onLogin () {
+  onGithubLogin () {
     var {dispatch} = this.props;
 
-    dispatch(actions.startLogin());
+    dispatch(actions.startGithubLogin());
+  }
+  onGoogleLogin () {
+    var {dispatch} = this.props;
+
+    dispatch(actions.startGoogleLogin());
   }
   render () {
     return (
@@ -25,7 +31,8 @@ export class Login extends React.Component {
               <p>
                 Login with GitHub account below.
               </p>
-              <button className="button" onClick={this.onLogin}>Login With GitHub</button>
+              <button className="button" onClick={this.onGoogleLogin}>Login With Google</button>
+              <button className="button" onClick={this.onGithubLogin}>Login With GitHub</button>
             </div>
           </div>
         </div>
